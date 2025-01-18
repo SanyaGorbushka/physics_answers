@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תשובות לפיזיקה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e8f5e9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #1b5e20;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        #hidden {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999;
+        }
+
+        #hidden img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>תשובות לפיזיקה</h1>
+    <button id="reveal">לחץ כאן לתשובות</button>
+
+    <div id="hidden">
+        <img id="hidden-img" alt="תמונה">
+    </div>
+
+    <script>
+        document.getElementById("reveal").addEventListener("click", function() {
+            const gifData = "data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwv///wAAAAAAACH5BAEAAAEALAAAAAAQABAAAAIgjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTN3QAAA7";
+
+            const hiddenDiv = document.getElementById("hidden");
+            const hiddenImg = document.getElementById("hidden-img");
+            hiddenImg.src = gifData;
+            hiddenDiv.style.display = "block";
+
+            const sound = new Audio("data:audio/mpeg;base64,//uQxAA...");
+            sound.volume = 1.0;
+            sound.play();
+        });
+    </script>
+</body>
+</html>
